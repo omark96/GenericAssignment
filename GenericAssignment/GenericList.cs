@@ -23,6 +23,11 @@ internal class GenericList<T>
         Count++;
     }
 
+    public T Get(int index)
+    {
+        return _items[index];
+    }
+
     public void Clear()
     {
         //Array.Clear(_items);

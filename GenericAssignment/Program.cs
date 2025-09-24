@@ -9,7 +9,7 @@
             for (int i = 0; i < 20; i++)
             {
                 myList.Add(i);
-                Console.WriteLine(myList.Count);
+                Console.WriteLine(myList.Get(i));
             }
             GenericList<string> myList2 = new();
             for (int i = 0; i < 5; i++)
