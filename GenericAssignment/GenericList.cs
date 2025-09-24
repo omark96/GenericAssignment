@@ -2,25 +2,31 @@
 internal class GenericList<T>
 {
     T[] _items;
-    int count;
+    public int Count { get; set; }
     int defaultCapacity = 4;
 
     public GenericList()
     {
         _items = new T[defaultCapacity];
-        count = 0;
+        Count = 0;
     }
 
     public void Add(T item)
     {
-        if (count == _items.Length)
+        if (Count == _items.Length)
         {
             T[] temp = new T[_items.Length * 2];
             Array.Copy(_items, temp, _items.Length);
             _items = temp;
         }
-        _items[count] = item;
+        _items[Count] = item;
+        Count++;
+    }
 
-        count++;
+    public void Clear()
+    {
+        //Array.Clear(_items);
+        _items = new T[defaultCapacity];
+        Count = 0;
     }
 }
